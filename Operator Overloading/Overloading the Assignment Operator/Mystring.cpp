@@ -28,6 +28,13 @@ Mystring::Mystring(const Mystring &source) : str{nullptr}
 {
     str = new char[std::strlen(source.str) + 1];
     std::strcpy(str, source.str);
+    std::cout << "Copy Constructor used" << std::endl;
+}
+
+//Move constructor
+Mystring::Mystring(Mystring &&source) : str(source.str) {
+    source.str = nullptr;
+    std::cout << "Move constructor used" << std::endl;
 }
 
 // Destructor
@@ -55,6 +62,8 @@ Mystring &Mystring::operator=(Mystring &&rhs) {
         return *this;
     delete[] str;
     str = rhs.str;
+    rhs.str = nullptr;
+    return *this;
 }
 
 // Display method

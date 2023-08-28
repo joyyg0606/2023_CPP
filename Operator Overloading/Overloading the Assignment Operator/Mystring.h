@@ -12,6 +12,7 @@ public:
     ~Mystring();
 
     Mystring &operator=(const Mystring &rhs);
+    Mystring &operator=(Mystring &&rhs);
 
     void display() const;
     const char *get_str() const;
