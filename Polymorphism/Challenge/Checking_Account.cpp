@@ -10,6 +10,10 @@ bool Checking_Account::withdraw(double amount) {
     return Account::withdraw(amount);
 }
 
+virtual boolChecking_Account::deposit(double amount) {
+    return Account::deposit(amount);
+}
+
 std::ostream &operator<<(std::ostream &os, const Checking_Account &account) {
     os << "[Checking_Account: " << account.name << ": " << account.balance << "]";
     return os;
