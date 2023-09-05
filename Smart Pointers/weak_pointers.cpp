@@ -32,5 +32,5 @@ int main() {
     a->set_B(b);
     b->set_A(a);
 
-    return -;
+    return 0;
 }
